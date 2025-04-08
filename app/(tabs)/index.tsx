@@ -110,6 +110,20 @@ const emails = [
     preview: 'Wishing our Muslim clients...',
     date: 'Monday',
   },
+  {
+    id: '4',
+    name: 'Akhilesh Pandey',
+    subject: 'WordPress Architect || Daytona Beach...',
+    preview: 'Hi Hope you are doing well! Role: WordPress Architect Location Daytona Beach...',
+    date: '28/3/2025',
+  },
+  {
+    id: '5',
+    name: 'Pandi Bango',
+    subject: 'Recruitment For AppWorld international',
+    preview: 'Dear, Mr Chigozie Orunta, I hope this email finds you well. Please find attached the dr...',
+    date: '26/3/2025',
+  },
 ];
 
 export default function HomeScreen() {
@@ -131,14 +145,32 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
+        <View style={styles.subheaders_left}>
+          <TouchableOpacity>
+            <Ionicons name="chevron-back" size={24} color="#007bff" />
+          </TouchableOpacity>
+          <Text style={styles.subheader_title}>Yahoo!</Text>
+        </View>
+        <View style={styles.subheaders_right}>
+          <View style={{backgroundColor: '#f0f0f0', padding: 10, borderRadius: 20}}>
+            <Text style={styles.subheader_title}>Select</Text>
+          </View>
+          <TouchableOpacity>
+            <Ionicons name="ellipsis-horizontal" style={{backgroundColor: '#f0f0f0', padding: 10, borderRadius: 100}} size={24} color="#007bff" />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <View style={styles.header}>
         <Text style={styles.headerText}>Inbox</Text>
-        <TouchableOpacity>
-          <Ionicons name="ellipsis-horizontal" size={24} color="black" />
-        </TouchableOpacity>
       </View>
 
       {/* Search */}
-      <TextInput placeholder="Search" style={styles.search} />
+      <View style={styles.searchContainer}>
+         <Ionicons name="search" size={20} color="#888" style={styles.iconLeft} />
+        <TextInput placeholder="Search" style={styles.search} />
+        <Ionicons name="mic" size={20} color="#888" style={styles.iconRight} />
+      </View>
 
   {/* Tabs */}
       <View style={styles.tabs}>
@@ -147,7 +179,9 @@ export default function HomeScreen() {
           <Text style={styles.tab} style={{color: 'white'}}>Primary</Text>
         </View>
         <MaterialIcons style={styles.tab} name="shopping-cart" size={20} color="#888" fill="black"/>
-        <Text style={styles.tab}>Social</Text>
+        <MaterialIcons style={styles.tab} name="chat" size={20} color="#888" fill="black"/>
+        <MaterialIcons style={styles.tab} name="mic" size={20} color="#888" fill="black"/>
+        
       </View>
 
       {/* Email List */}
@@ -173,6 +207,8 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 16,
+    fontFamily: 'Jost',
     flex: 1,
     backgroundColor: '#fff',
   },
@@ -182,7 +218,25 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  subheaders_left: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    fontFamily: 'Jost',
+    gap: 6,
+  },
+   subheaders_right: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    fontFamily: 'Jost',
+    gap: 20,
+  },
+  subheader_title: {
+    fontSize: 20,
+    color: "#007bff",
+    fontFamily: 'Jost',
+  },
   headerText: {
+    fontFamily: 'Jost',
     fontSize: 28,
     fontWeight: 'bold',
   },
@@ -193,30 +247,67 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   tab: {
+    fontFamily: 'Jost',
     color: '#888',
     padding: 10,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 10,
+    borderColor: '#ccc', 
   },
   tabActive: {
+    fontFamily: 'Jost',
     borderRadius: 20,
     padding: 10,
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     gap: 6,
     textAlign: 'center',
     alignItems: 'center',
-    width: 100,
+    width: 150,
     color: 'white',
     backgroundColor: '#007bff',
     fontWeight: 'bold',
   },
   search: {
-    margin: 16,
+    fontFamily: 'Jost',
+    width: '90%',
+    marginLeft: 16,
     padding: 10,
     borderRadius: 10,
     backgroundColor: '#f0f0f0',
   },
+  searchContainer: {
+    position: 'relative',
+    width: '92%',
+    margin: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    height: 40,
+    backgroundColor: '#f0f0f0'//'#fff',
+  },
+  iconLeft: {
+    position: 'absolute',
+    left: 0,
+    backgroundColor: '#f0f0f0',
+    padding: 8,
+    borderRadius: 10,
+    borderColor: '#ccc',
+  },
+  iconRight: {
+    position: 'absolute',
+    right: 0,
+    backgroundColor: '#f0f0f0',
+    padding: 8,
+    borderRadius: 10,
+    borderColor: '#ccc', 
+  },
   emailItem: {
+    fontFamily: 'Jost',
     flexDirection: 'row',
     padding: 16,
     borderBottomWidth: 0.5,
@@ -224,6 +315,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   avatar: {
+    fontFamily: 'Jost',
     backgroundColor: '#ddd',
     width: 40,
     height: 40,
@@ -233,28 +325,35 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   avatarText: {
+    fontFamily: 'Jost',
     fontWeight: 'bold',
     fontSize: 16,
   },
   emailContent: {
+    fontFamily: 'Jost',
     flex: 1,
   },
   emailSender: {
+    fontFamily: 'Jost',
     fontWeight: 'bold',
   },
   emailSubject: {
+    fontFamily: 'Jost',
     color: '#555',
   },
   emailPreview: {
+    fontFamily: 'Jost',
     color: '#999',
     fontSize: 12,
   },
   emailDate: {
+    fontFamily: 'Jost',
     fontSize: 12,
     color: '#999',
     paddingTop: 5,
   },
   fab: {
+    fontFamily: 'Jost',
     position: 'absolute',
     bottom: 30,
     right: 20,
@@ -264,6 +363,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   bottomStatus: {
+    fontFamily: 'Jost',
     alignItems: 'center',
     padding: 12,
     borderTopWidth: 0.5,
