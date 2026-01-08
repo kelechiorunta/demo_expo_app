@@ -4,4 +4,4 @@
 
 // Register app entry through Expo Router
 
-import 'expo-router/entry'
+import 'expo-router/entry';

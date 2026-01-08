@@ -94,36 +94,37 @@ const emails = [
     name: 'ProvidusBank',
     subject: 'MOBILE BANKING LOG IN CONFIRMAT...',
     preview: 'Dear ORUNTA CHIGOZIE NDU...',
-    date: 'Yesterday',
+    date: 'Yesterday'
   },
   {
     id: '2',
     name: 'Manuel Inyang',
     subject: 'UPDATE ON APPLICATION',
     preview: 'Dear Chigozie, We appreciate...',
-    date: 'Tuesday',
+    date: 'Tuesday'
   },
   {
     id: '3',
     name: 'Laserderm Clinics',
     subject: 'Eid Mubarak from all of us...',
     preview: 'Wishing our Muslim clients...',
-    date: 'Monday',
+    date: 'Monday'
   },
   {
     id: '4',
     name: 'Akhilesh Pandey',
     subject: 'WordPress Architect || Daytona Beach...',
     preview: 'Hi Hope you are doing well! Role: WordPress Architect Location Daytona Beach...',
-    date: '28/3/2025',
+    date: '28/3/2025'
   },
   {
     id: '5',
     name: 'Pandi Bango',
     subject: 'Recruitment For AppWorld international',
-    preview: 'Dear, Mr Chigozie Orunta, I hope this email finds you well. Please find attached the dr...',
-    date: '26/3/2025',
-  },
+    preview:
+      'Dear, Mr Chigozie Orunta, I hope this email finds you well. Please find attached the dr...',
+    date: '26/3/2025'
+  }
 ];
 
 export default function HomeScreen() {
@@ -152,11 +153,16 @@ export default function HomeScreen() {
           <Text style={styles.subheader_title}>Yahoo!</Text>
         </View>
         <View style={styles.subheaders_right}>
-          <View style={{backgroundColor: '#f0f0f0', padding: 10, borderRadius: 20}}>
+          <View style={{ backgroundColor: '#f0f0f0', padding: 10, borderRadius: 20 }}>
             <Text style={styles.subheader_title}>Select</Text>
           </View>
           <TouchableOpacity>
-            <Ionicons name="ellipsis-horizontal" style={{backgroundColor: '#f0f0f0', padding: 10, borderRadius: 100}} size={24} color="#007bff" />
+            <Ionicons
+              name="ellipsis-horizontal"
+              style={{ backgroundColor: '#f0f0f0', padding: 10, borderRadius: 100 }}
+              size={24}
+              color="#007bff"
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -167,29 +173,32 @@ export default function HomeScreen() {
 
       {/* Search */}
       <View style={styles.searchContainer}>
-         <Ionicons name="search" size={20} color="#888" style={styles.iconLeft} />
+        <Ionicons name="search" size={20} color="#888" style={styles.iconLeft} />
         <TextInput placeholder="Search" style={styles.search} />
         <Ionicons name="mic" size={20} color="#888" style={styles.iconRight} />
       </View>
 
-  {/* Tabs */}
+      {/* Tabs */}
       <View style={styles.tabs}>
         <View style={styles.tabActive}>
-          <FontAwesome name="user" size={16} color="white" fill="black"/>
-          <Text style={styles.tab} style={{color: 'white'}}>Primary</Text>
+          <FontAwesome name="user" size={16} color="white" fill="black" />
+          <Text style={styles.tab} style={{ color: 'white' }}>
+            Primary
+          </Text>
         </View>
-        <MaterialIcons style={styles.tab} name="shopping-cart" size={20} color="#888" fill="black"/>
-        <MaterialIcons style={styles.tab} name="chat" size={20} color="#888" fill="black"/>
-        <MaterialIcons style={styles.tab} name="mic" size={20} color="#888" fill="black"/>
-        
+        <MaterialIcons
+          style={styles.tab}
+          name="shopping-cart"
+          size={20}
+          color="#888"
+          fill="black"
+        />
+        <MaterialIcons style={styles.tab} name="chat" size={20} color="#888" fill="black" />
+        <MaterialIcons style={styles.tab} name="mic" size={20} color="#888" fill="black" />
       </View>
 
       {/* Email List */}
-      <FlatList
-        data={emails}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
+      <FlatList data={emails} renderItem={renderItem} keyExtractor={(item) => item.id} />
 
       {/* Bottom Status */}
       <View style={styles.bottomStatus}>
@@ -204,47 +213,46 @@ export default function HomeScreen() {
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
     paddingTop: 16,
     fontFamily: 'Jost',
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff'
   },
   header: {
     padding: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   subheaders_left: {
     flexDirection: 'row',
     alignItems: 'center',
     fontFamily: 'Jost',
-    gap: 6,
+    gap: 6
   },
-   subheaders_right: {
+  subheaders_right: {
     flexDirection: 'row',
     alignItems: 'center',
     fontFamily: 'Jost',
-    gap: 20,
+    gap: 20
   },
   subheader_title: {
     fontSize: 20,
-    color: "#007bff",
-    fontFamily: 'Jost',
+    color: '#007bff',
+    fontFamily: 'Jost'
   },
   headerText: {
     fontFamily: 'Jost',
     fontSize: 28,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   tabs: {
     flexDirection: 'row',
     paddingHorizontal: 16,
     gap: 16,
-    marginBottom: 8,
+    marginBottom: 8
   },
   tab: {
     fontFamily: 'Jost',
@@ -252,7 +260,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#f0f0f0',
     borderRadius: 10,
-    borderColor: '#ccc', 
+    borderColor: '#ccc'
   },
   tabActive: {
     fontFamily: 'Jost',
@@ -267,7 +275,7 @@ const styles = StyleSheet.create({
     width: 150,
     color: 'white',
     backgroundColor: '#007bff',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   search: {
     fontFamily: 'Jost',
@@ -275,7 +283,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     padding: 10,
     borderRadius: 10,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#f0f0f0'
   },
   searchContainer: {
     position: 'relative',
@@ -288,7 +296,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 10,
     height: 40,
-    backgroundColor: '#f0f0f0'//'#fff',
+    backgroundColor: '#f0f0f0' //'#fff',
   },
   iconLeft: {
     position: 'absolute',
@@ -296,7 +304,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f0',
     padding: 8,
     borderRadius: 10,
-    borderColor: '#ccc',
+    borderColor: '#ccc'
   },
   iconRight: {
     position: 'absolute',
@@ -304,7 +312,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f0',
     padding: 8,
     borderRadius: 10,
-    borderColor: '#ccc', 
+    borderColor: '#ccc'
   },
   emailItem: {
     fontFamily: 'Jost',
@@ -312,7 +320,7 @@ const styles = StyleSheet.create({
     padding: 16,
     borderBottomWidth: 0.5,
     borderColor: '#ccc',
-    alignItems: 'flex-start',
+    alignItems: 'flex-start'
   },
   avatar: {
     fontFamily: 'Jost',
@@ -322,35 +330,35 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 12,
+    marginRight: 12
   },
   avatarText: {
     fontFamily: 'Jost',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 16
   },
   emailContent: {
     fontFamily: 'Jost',
-    flex: 1,
+    flex: 1
   },
   emailSender: {
     fontFamily: 'Jost',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   emailSubject: {
     fontFamily: 'Jost',
-    color: '#555',
+    color: '#555'
   },
   emailPreview: {
     fontFamily: 'Jost',
     color: '#999',
-    fontSize: 12,
+    fontSize: 12
   },
   emailDate: {
     fontFamily: 'Jost',
     fontSize: 12,
     color: '#999',
-    paddingTop: 5,
+    paddingTop: 5
   },
   fab: {
     fontFamily: 'Jost',
@@ -360,13 +368,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#007bff',
     padding: 16,
     borderRadius: 30,
-    elevation: 5,
+    elevation: 5
   },
   bottomStatus: {
     fontFamily: 'Jost',
     alignItems: 'center',
     padding: 12,
     borderTopWidth: 0.5,
-    borderColor: '#ccc',
-  },
+    borderColor: '#ccc'
+  }
 });
