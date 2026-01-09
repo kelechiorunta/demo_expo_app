@@ -2,7 +2,7 @@ import type { Config } from 'jest';
 
 const config: Config = {
   preset: 'jest-expo',
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: [
     '**/*.{ts,tsx,js,jsx}',
     '!**/coverage/**',
@@ -10,7 +10,8 @@ const config: Config = {
     '!**/babel.config.js',
     '!**/expo-env.d.ts',
     '!**/.expo/**'
-  ]
+  ],
+  testEnvironment: 'jsdom'
   //   setupFiles: ['./jest.setup.js'],
   //   setupFilesAfterEnv: [
   //     '@testing-library/jest-native/extend-expect',
