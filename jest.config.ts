@@ -11,11 +11,9 @@ const config: Config = {
     '!**/expo-env.d.ts',
     '!**/.expo/**'
   ],
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
   //   setupFiles: ['./jest.setup.js'],
-  //   setupFilesAfterEnv: [
-  //     '@testing-library/jest-native/extend-expect',
-  //   ],
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect']
 };
 
 export default config;
