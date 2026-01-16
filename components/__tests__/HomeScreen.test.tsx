@@ -1,11 +1,14 @@
 import { act } from 'react';
-import { fireEvent, render, renderHook, userEvent } from '../tests-utils/test-utils';
+import { fireEvent, render, renderHook, userEvent, cleanup } from '../tests-utils/test-utils';
 import { screen } from '@testing-library/dom';
 import useCount from '@/hooks/useCount';
 
 import HomeScreen, { CustomText } from '@/app/index';
 
 describe('<HomeScreen />', () => {
+  // Cleanup helper function after each test
+  afterEach(() => cleanup());
+
   test('CustomText renders correctly', () => {
     const tree = render(<CustomText>Some text</CustomText>);
 
@@ -30,7 +33,7 @@ describe('<HomeScreen />', () => {
 
     const button = getByText('Press Me');
 
-    // Act is meant to wait for state updates in the event handlers of the button before assertion
+    // Act is meant to wait for side effects or state updates in the event handlers of the button before assertion
     await act(async () => {
       fireEvent.press(button);
     });
