@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:18
+    restart: always
+    container_name: demo_expo_app
+    environment:
+      POSTGRES_NAME: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/18/docker
+volumes:
+  pgdata:
