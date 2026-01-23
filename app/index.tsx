@@ -1,3 +1,4 @@
+import Button from '@/components/Button';
 import { PropsWithChildren, useState } from 'react';
 import {
   StyleSheet,
@@ -24,6 +25,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <CustomText>Welcome!</CustomText>
+      <Button name="Hi there" styles={{ padding: 10, backgroundColor: 'red' }} />
       <Text>{count}</Text>
       <Pressable
         accessibilityRole="button"
