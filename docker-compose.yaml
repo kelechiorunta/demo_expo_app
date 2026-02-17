@@ -3,6 +3,8 @@ services:
     image: postgres:18
     restart: always
     container_name: demo_expo_app
+    ports:
+      - 5432:5432
     environment:
       POSTGRES_NAME: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
